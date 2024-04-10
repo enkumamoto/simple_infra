@@ -1,0 +1,7 @@
+chachat_rg          = "RG-Company_Help_Advisor_Chat"
+chachat_vnet        = "VNet-Company_Help_Advisor_Chat"
+chachat_nsg         = "NSG-Company_Help_Advisor_Chat"
+location            = "brazilsouth"
+chachat_domain_name = "companyhelpadvisorchat"
+chachat_rt          = "RT-Company_Help_Advisor_Chat"
+chachat_sbnt        = "SubNet-Company_Help_Advisor_Chat"

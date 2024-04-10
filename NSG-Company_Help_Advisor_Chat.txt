@@ -1,0 +1,157 @@
+{
+    "name": "NSG-Company_Help_Advisor_Chat",
+    "id": "/subscriptions/a6d20b3d-0350-460e-a215-cf251549176b/resourceGroups/RG-Company_Help_Advisor_Chat/providers/Microsoft.Network/networkSecurityGroups/NSG-Company_Help_Advisor_Chat",
+    "etag": "W/\"d90e02a8-1537-4eb0-ae04-c9239429cbf0\"",
+    "type": "Microsoft.Network/networkSecurityGroups",
+    "location": "brazilsouth",
+    "tags": {
+        "Centro_de_Custo": "RR0B100TPD",
+        "Gerente_Responsavel": "Flavio Leite Loucao Junior",
+        "Projeto": "Company Help Advisor Chat",
+        "UN_do_Projeto": "Corporativo | Corporate"
+    },
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "583944d7-49d1-4313-a215-be283b80e3cb",
+        "securityRules": [],
+        "defaultSecurityRules": [
+            {
+                "name": "AllowVnetInBound",
+                "id": "/subscriptions/a6d20b3d-0350-460e-a215-cf251549176b/resourceGroups/RG-Company_Help_Advisor_Chat/providers/Microsoft.Network/networkSecurityGroups/NSG-Company_Help_Advisor_Chat/defaultSecurityRules/AllowVnetInBound",
+                "etag": "W/\"d90e02a8-1537-4eb0-ae04-c9239429cbf0\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow inbound traffic from all VMs in VNET",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "VirtualNetwork",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowAzureLoadBalancerInBound",
+                "id": "/subscriptions/a6d20b3d-0350-460e-a215-cf251549176b/resourceGroups/RG-Company_Help_Advisor_Chat/providers/Microsoft.Network/networkSecurityGroups/NSG-Company_Help_Advisor_Chat/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                "etag": "W/\"d90e02a8-1537-4eb0-ae04-c9239429cbf0\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow inbound traffic from azure load balancer",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "AzureLoadBalancer",
+                    "destinationAddressPrefix": "*",
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "DenyAllInBound",
+                "id": "/subscriptions/a6d20b3d-0350-460e-a215-cf251549176b/resourceGroups/RG-Company_Help_Advisor_Chat/providers/Microsoft.Network/networkSecurityGroups/NSG-Company_Help_Advisor_Chat/defaultSecurityRules/DenyAllInBound",
+                "etag": "W/\"d90e02a8-1537-4eb0-ae04-c9239429cbf0\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Deny all inbound traffic",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowVnetOutBound",
+                "id": "/subscriptions/a6d20b3d-0350-460e-a215-cf251549176b/resourceGroups/RG-Company_Help_Advisor_Chat/providers/Microsoft.Network/networkSecurityGroups/NSG-Company_Help_Advisor_Chat/defaultSecurityRules/AllowVnetOutBound",
+                "etag": "W/\"d90e02a8-1537-4eb0-ae04-c9239429cbf0\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "VirtualNetwork",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowInternetOutBound",
+                "id": "/subscriptions/a6d20b3d-0350-460e-a215-cf251549176b/resourceGroups/RG-Company_Help_Advisor_Chat/providers/Microsoft.Network/networkSecurityGroups/NSG-Company_Help_Advisor_Chat/defaultSecurityRules/AllowInternetOutBound",
+                "etag": "W/\"d90e02a8-1537-4eb0-ae04-c9239429cbf0\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow outbound traffic from all VMs to Internet",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "Internet",
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "DenyAllOutBound",
+                "id": "/subscriptions/a6d20b3d-0350-460e-a215-cf251549176b/resourceGroups/RG-Company_Help_Advisor_Chat/providers/Microsoft.Network/networkSecurityGroups/NSG-Company_Help_Advisor_Chat/defaultSecurityRules/DenyAllOutBound",
+                "etag": "W/\"d90e02a8-1537-4eb0-ae04-c9239429cbf0\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Deny all outbound traffic",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            }
+        ],
+        "subnets": [
+            {
+                "id": "/subscriptions/a6d20b3d-0350-460e-a215-cf251549176b/resourceGroups/RG-Company_Help_Advisor_Chat/providers/Microsoft.Network/virtualNetworks/Vnet-Company_Help_Advisor_Chat/subnets/SubNet-Company_Help_Advisor_Chat"
+            }
+        ]
+    }
+}

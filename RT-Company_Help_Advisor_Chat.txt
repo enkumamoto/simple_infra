@@ -1,0 +1,37 @@
+{
+    "name": "RT-Company_Help_Advisor_Chat",
+    "id": "/subscriptions/a6d20b3d-0350-460e-a215-cf251549176b/resourceGroups/RG-Company_Help_Advisor_Chat/providers/Microsoft.Network/routeTables/RT-Company_Help_Advisor_Chat",
+    "etag": "W/\"0e1cd5f5-8a64-4ac5-9bb0-1f93578eb9f3\"",
+    "type": "Microsoft.Network/routeTables",
+    "location": "brazilsouth",
+    "tags": {
+        "Centro_de_Custo": "RR0B100TPD",
+        "Gerente_Responsavel": "Flavio Leite Loucao Junior",
+        "Projeto": "Company Help Advisor Chat",
+        "UN_do_Projeto": "Corporativo | Corporate"
+    },
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "2027a578-a870-4a4d-9453-16c198a6ef91",
+        "disableBgpRoutePropagation": false,
+        "routes": [
+            {
+                "name": "192.168.150.132",
+                "id": "/subscriptions/a6d20b3d-0350-460e-a215-cf251549176b/resourceGroups/RG-Company_Help_Advisor_Chat/providers/Microsoft.Network/routeTables/RT-Company_Help_Advisor_Chat/routes/192.168.150.132",
+                "etag": "W/\"0e1cd5f5-8a64-4ac5-9bb0-1f93578eb9f3\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefix": "0.0.0.0/0",
+                    "nextHopType": "VirtualAppliance",
+                    "nextHopIpAddress": "192.168.150.132"
+                },
+                "type": "Microsoft.Network/routeTables/routes"
+            }
+        ],
+        "subnets": [
+            {
+                "id": "/subscriptions/a6d20b3d-0350-460e-a215-cf251549176b/resourceGroups/RG-Company_Help_Advisor_Chat/providers/Microsoft.Network/virtualNetworks/Vnet-Company_Help_Advisor_Chat/subnets/SubNet-Company_Help_Advisor_Chat"
+            }
+        ]
+    }
+}
