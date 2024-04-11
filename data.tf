@@ -1,24 +1,24 @@
-data "azurerm_resource_group" "chachat_rg" {
-  name = var.chachat_rg
+data "azurerm_resource_group" "chatbot_rg" {
+  name = var.chatbot_rg
 }
 
-data "azurerm_network_security_group" "chachat_nsg" {
-  name                = var.chachat_nsg
-  resource_group_name = data.azurerm_resource_group.chachat_rg.name
+data "azurerm_network_security_group" "chatbot_nsg" {
+  name                = var.chatbot_nsg
+  resource_group_name = data.azurerm_resource_group.chatbot_rg.name
 }
 
-data "azurerm_virtual_network" "chachat_vnet" {
-  name                = var.chachat_vnet
-  resource_group_name = data.azurerm_resource_group.chachat_rg.name
+data "azurerm_virtual_network" "chatbot_vnet" {
+  name                = var.chatbot_vnet
+  resource_group_name = data.azurerm_resource_group.chatbot_rg.name
 }
 
-data "azurerm_route_table" "chachat" {
-  name                = var.chachat_rt
-  resource_group_name = data.azurerm_resource_group.chachat_rg.name
+data "azurerm_route_table" "chatbot" {
+  name                = var.chatbot_rt
+  resource_group_name = data.azurerm_resource_group.chatbot_rg.name
 }
 
-data "azurerm_subnet" "chachat_sbnt" {
-  name                 = var.chachat_sbnt
-  resource_group_name  = data.azurerm_resource_group.chachat_rg.name
-  virtual_network_name = data.azurerm_virtual_network.chachat_vnet.name
+data "azurerm_subnet" "chatbot_sbnt" {
+  name                 = var.chatbot_sbnt
+  resource_group_name  = data.azurerm_resource_group.chatbot_rg.name
+  virtual_network_name = data.azurerm_virtual_network.chatbot_vnet.name
 }

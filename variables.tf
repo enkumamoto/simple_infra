@@ -1,4 +1,4 @@
-variable "chachat_rg" {
+variable "chatbot_rg" {
   type = string
 }
 
@@ -6,22 +6,22 @@ variable "location" {
   type = string
 }
 
-variable "chachat_vnet" {
+variable "chatbot_vnet" {
   type = string
 }
 
-variable "chachat_nsg" {
+variable "chatbot_nsg" {
   type = string
 }
 
-variable "chachat_domain_name" {
+variable "chatbot_domain_name" {
   type = string
 }
 
-variable "chachat_rt" {
+variable "chatbot_rt" {
   type = string
 }
 
-variable "chachat_sbnt" {
+variable "chatbot_sbnt" {
   type = string
 } 
