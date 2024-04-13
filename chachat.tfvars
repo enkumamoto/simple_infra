@@ -1,7 +1,0 @@
-chatbot_rg          = "RG-SandBox"
-chatbot_vnet        = "Vnet-chatbot"
-chatbot_nsg         = "NSG-chatbot"
-location            = "eastus"
-chatbot_domain_name = "companyhelpadvisorchat"
-chatbot_rt          = "RT-chatbot"
-chatbot_sbnt        = "sbnt-chatbot"
