@@ -4,13 +4,13 @@
 </h1>
 
 <h3 align="center">
-    Este código Terraform implementa uma Arquitetura Azure para o projeto Company Helper Advisor Chat.
+    Este código Terraform implementa uma Arquitetura Azure para o projeto infraestrutura simples.
 </h3>
 
 </p>
 
 <h4 align="center">
-    Status: Concluído
+    Status: Em Evolução
 </h4>
 
 <p align="center">
@@ -33,22 +33,22 @@ Ao mesmo tempo, este projeto pode ser migrado para outro serviço como Azure Con
 2. Instalar az cli: https://learn.microsoft.com/pt-br/cli/azure/install-azure-cli
 3. Como realizar login com az cli: https://learn.microsoft.com/pt-br/cli/azure/authenticate-azure-cli
 4. Clonar repositório: `git clone <URL para clone>`
-6. Dentro da localização do repositório, crie o arquivo `Company_Help_Advisor_Chat.tfbackend` com um conteúdo de exemplo:
+6. Dentro da localização do repositório, crie o arquivo `simple_infra.tfbackend` com um conteúdo de exemplo:
 
     ```
-    resource_group_name  = "RG-Company_Help_Advisor_Chat_nexus"
+    resource_group_name  = "RG-Simple_Infra_TFstate"
     storage_account_name = "sacomphelpadvichat"
     container_name       = "tfstate"
-    key                  = "Company_Help_Advisor_Chat.tfstate"
+    key                  = "simleinfra.tfstate"
     ```
 7. Execute o seguinte comando para criar o container com versionamento ativado e atualizar a Subnet Delegation:
 
     ```
-    export RESOURCE_GROUP_NAME=RG-Company_Help_Advisor_Chat_nexus
-    export STORAGE_ACCOUNT_NAME=sacomphelpadvichat
+    export RESOURCE_GROUP_NAME=RG-Simple_Infra_TFstate
+    export STORAGE_ACCOUNT_NAME=tfstatstorageacconte
     export CONTAINER_NAME=tfstate
     export REGION=eastus
-    export TAGS='managedBy=Nexus'
+    export TAGS='managedBy=Eiji'
 
     az login --service-principal -u ${ARM_CLIENT_ID} -p ${ARM_CLIENT_SECRET} --tenant ${ARM_TENANT_ID}
     az account set --subscription ${ARM_SUBSCRIPTION_ID}
@@ -61,39 +61,36 @@ Ao mesmo tempo, este projeto pode ser migrado para outro serviço como Azure Con
 
     # Create blob container
     az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME --auth-mode login
-
-    # UPDATE SUBNET DELEGATION
-    az network vnet subnet update --resource-group RG-Company_Help_Advisor_Chat --name SubNet-Company_Help_Advisor_Chat --vnet-name Vnet-Company_Help_Advisor_Chat --delegations Microsoft.DBforPostgreSQL/flexibleServers
     ```
-8. Dentro do local do repositório, crie o arquivo `Company_Help_Advisor_Chat.tfvars` com conteúdo de exemplo:
+8. Dentro do local do repositório, crie o arquivo `simpleinfra.tfvars` com conteúdo de exemplo:
 
     ```
-    chatbot_project_rg          = "RG-Company_Help_Advisor_Chat"
-    chatbot_project_vnet        = "VNet-Company_Help_Advisor_Chat"
-    chatbot_project_nsg         = "NSG-Company_Help_Advisor_Chat"
-    chatbot_project_rt          = "RT-Company_Help_Advisor_Chat"
-    chatbot_project_sbnt        = "SubNet-Company_Help_Advisor_Chat"
-    chatbot_project_domain_name = "companyhelpadvisorchat"
+    simple_infra_project_rg          = "RG-Simple_Infra"
+    simple_infra_project_vnet        = "VNet-Simple_Infra"
+    simple_infra_project_nsg         = "NSG-Simple_Infra"
+    simple_infra_project_rt          = "RT-Simple_Infra"
+    simple_infra_project_sbnt        = "SubNet-Simple_Infra"
+    simple_infra_project_domain_name = "simpleinfra"
     location                    = "East US"
     administrator_login         = "psqladmin"
     administrator_password      = "w@N^$&uQ!r6q92eu#NHnowGAuC"
-    chatbot_project_db_name        = "companyhelpadvisorchatdb"
-    chatbot_storage_name        = "companyhelpadvisorchatstorage"
-    chatbot-container-tfstate   = "companyhelpadvisorchatcontainer"
-    subscription_id             = "a6d20b3d-0350-460e-a215-cf251549176b"
-    chatbot_acr_name            = "companyhelpadvisorchatacr"
+    simple_infra_project_db_name        = "simpleinfradb"
+    simple_infra_storage_name        = "simpleinfrastorage"
+    simple_infra-container-tfstate   = "simpleinfracontainer"
+    subscription_id             = "subscription_ID"
+    simple_infra_acr_name            = "simpleinfraacr"
     ```
-9. Exporte a variáveis abaixo para que o `Company_Help_Advisor_Chat.tfbackend` funcione:
+9. Exporte em seu terminal as variáveis abaixo para que o `simple_infra.tfbackend` funcione:
 
 ```
-    export ARM_CLIENT_ID=719fdedb-dddf-4070-a705-b9237387fe56
-    export ARM_CLIENT_SECRET=4Zr8Q~IjWST9ivoj0mfXtipw7y~Oh_s1F2.DDdhr
-    export ARM_TENANT_ID=9339fb1c-0944-4fb9-808d-a278e53590e5
-    export ARM_SUBSCRIPTION_ID=a6d20b3d-0350-460e-a215-cf251549176b
+    export ARM_CLIENT_ID="ARM_CLIENT_ID"
+    export ARM_CLIENT_SECRET="ARM_CLIENT_SECRET".DDdhr
+    export ARM_TENANT_ID="ARM_TENANT_ID"
+    export ARM_SUBSCRIPTION_ID=subscription_ID
 ```
 
-10. Execute `tofu init -upgrade -backend-config=./Company_Help_Advisor_Chat.tfbackend`
-11. Execute `tofu apply -var-file ./Company_Help_Advisor_Chat.tfvars`
+10. Execute `tofu init -upgrade -backend-config=./simple_infra.tfbackend`
+11. Execute `tofu apply -var-file ./Simple_Infra.tfvars`
 
 ## Documentações
 - [Terraform (Opentofu)](https://opentofu.org/)

@@ -1,7 +1,7 @@
 #########################
 # Azure Cloud Variables #
 #########################
-variable "chatbot_project_rg" {
+variable "simple_infra_project_rg" {
   type = string
 }
 
@@ -9,23 +9,23 @@ variable "location" {
   type = string
 }
 
-variable "chatbot_project_vnet" {
+variable "simple_infra_project_vnet" {
   type = string
 }
 
-variable "chatbot_project_nsg" {
+variable "simple_infra_project_nsg" {
   type = string
 }
 
-variable "chatbot_project_domain_name" {
+variable "simple_infra_project_domain_name" {
   type = string
 }
 
-variable "chatbot_project_rt" {
+variable "simple_infra_project_rt" {
   type = string
 }
 
-variable "chatbot_project_sbnt" {
+variable "simple_infra_project_sbnt" {
   type = string
 }
 
@@ -40,14 +40,14 @@ variable "administrator_password" {
   type = string
 }
 
-variable "chatbot_project_db_name" {
+variable "simple_infra_project_db_name" {
   type = string
 }
 
 #######################
 # Azure ACR Variables #
 #######################
-variable "chatbot_acr_name" {
+variable "simple_infra_acr_name" {
   type = string
 }
 
