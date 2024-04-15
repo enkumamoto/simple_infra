@@ -1,0 +1,4 @@
+resource_group_name  = "RG-Company_Help_Advisor_Chat_nexus"
+storage_account_name = "sacomphelpadvichat"
+container_name       = "tfstate"
+key                  = "Company_Help_Advisor_Chat.tfstate"

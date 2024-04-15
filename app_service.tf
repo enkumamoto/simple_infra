@@ -1,26 +1,47 @@
-resource "azurerm_linux_web_app" "frontend" {
-  name                = "frontend"
-  resource_group_name = data.azurerm_resource_group.chatbot_rg.name
-  location            = data.azurerm_resource_group.chatbot_rg.location
-  service_plan_id     = azurerm_service_plan.chatbot_plan.id
-
-  site_config {}
+resource "time_sleep" "wait_60_seconds" {
+  depends_on = [azurerm_container_registry.chatbot_acr]
+  create_duration = "60s"
 }
 
-resource "azurerm_linux_web_app" "backend" {
-  name                = "backend"
-  resource_group_name = data.azurerm_resource_group.chatbot_rg.name
-  location            = data.azurerm_resource_group.chatbot_rg.location
-  service_plan_id     = azurerm_service_plan.chatbot_plan.id
-
-  site_config {}
+resource "random_id" "app_service" {
+ 
+  byte_length = 6
+  
 }
+resource "azurerm_linux_web_app" "app-service" {
+  for_each            = var.app_name
+  name                = "${var.app_name[each.key]}-${random_id.app_service.hex}"
+  location            = azurerm_service_plan.chatbot_project_plan.location
+  resource_group_name = data.azurerm_resource_group.chatbot_project_rg.name
+  service_plan_id     = azurerm_service_plan.chatbot_project_plan.id
+  https_only          = true
 
-resource "azurerm_linux_web_app" "modelservice" {
-  name                = "model-service"
-  resource_group_name = data.azurerm_resource_group.chatbot_rg.name
-  location            = data.azurerm_resource_group.chatbot_rg.location
-  service_plan_id     = azurerm_service_plan.chatbot_plan.id
+  app_settings = merge({
+    "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = "false"
+    "DOCKER_REGISTRY_SERVER_URL"          = "https://${azurerm_container_registry.chatbot_acr.login_server}"
+    "DOCKER_REGISTRY_SERVER_USERNAME"     = azurerm_container_registry.chatbot_acr.admin_username
+    "DOCKER_REGISTRY_SERVER_PASSWORD"     = azurerm_container_registry.chatbot_acr.admin_password
+    "DOCKER_CUSTOM_IMAGE_NAME"            = "${azurerm_container_registry.chatbot_acr.login_server}/${var.app_image_name[each.key]}:latest"
+  })
 
-  site_config {}
+  site_config {
+    application_stack {
+      docker_image_name        = "${var.app_image_name[each.key]}:latest"
+      docker_registry_url      = "https://${azurerm_container_registry.chatbot_acr.login_server}"
+      docker_registry_username = azurerm_container_registry.chatbot_acr.admin_username
+      docker_registry_password = azurerm_container_registry.chatbot_acr.admin_password
+    }
+  }
+
+  logs {
+    application_logs {
+      file_system_level = "Verbose"
+    }
+    http_logs {
+      file_system {
+        retention_in_days = 7
+        retention_in_mb   = 35
+      }
+    }
+  }
 }
