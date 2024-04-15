@@ -20,11 +20,18 @@
 
  ## Sobre
 
-O projeto utiliza solicita uma arquitetura simples para sua implementação. Esse padrão teve fornecimento, pelo Departamento de TI da Radix, de um ambiente de rede seguro e isolado para os recursos do projeto.
+Este projeto está em evolução. A ideia final é que os arquivos venham prover:
+ - Um Resource Group;
+ - Uma VNET;
+ - Uma Subnet;
+ - Um Network Security Group;
+ - Uma Tabela de rotas;
+ - Um Banco de Dados PostgreSQL Flexible Server;
+ - App Service;
+ - App Service Plan;
+ - Um container registry
 
-Isso significa que o projeto realiza uma entrega de qualidade e de baixo custo, o projeto utiliza serviços da Azure como Azure Service Bus, Azure PostgreSQL Flexible Server e Azure App Service para construir uma solução econômica.
-Ao mesmo tempo, este projeto pode ser migrado para outro serviço como Azure Container Service (ACS) ou Azure Kubernetes Service (AKS) e se tornar escalável.
-
+ 
 ![Arquitetura](./companyhelperadvisor.jpg)
 
 ## Como funciona
