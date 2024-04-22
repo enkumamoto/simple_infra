@@ -80,7 +80,7 @@ Este projeto está em evolução. A ideia final é que os arquivos venham prover
     simple_infra_project_domain_name = "simpleinfra"
     location                    = "East US"
     administrator_login         = "psqladmin"
-    administrator_password      = "w@N^$&uQ!r6q92eu#NHnowGAuC"
+    administrator_password      = "password"
     simple_infra_project_db_name        = "simpleinfradb"
     simple_infra_storage_name        = "simpleinfrastorage"
     simple_infra-container-tfstate   = "simpleinfracontainer"
