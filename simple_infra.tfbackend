@@ -1,4 +1,4 @@
-resource_group_name  = "RG-Company_Help_Advisor_Chat_nexus"
-storage_account_name = "sacomphelpadvichat"
+resource_group_name  = "RG-Simple_Infra_TFstate"
+storage_account_name = "simpleinfra"
 container_name       = "tfstate"
-key                  = "Company_Help_Advisor_Chat.tfstate"
+key                  = "simpleinfra.tfstate"
