@@ -44,9 +44,9 @@ Este projeto está em evolução. A ideia final é que os arquivos venham prover
 
     ```
     resource_group_name  = "RG-Simple_Infra_TFstate"
-    storage_account_name = "sacomphelpadvichat"
+    storage_account_name = "simpleinfra"
     container_name       = "tfstate"
-    key                  = "simleinfra.tfstate"
+    key                  = "simpleinfra.tfstate"
     ```
 7. Execute o seguinte comando para criar o container com versionamento ativado e atualizar a Subnet Delegation:
 
