@@ -21,7 +21,7 @@
 
 ## 📌 Sobre
 
-Este projeto está em desenvolvimento. O objetivo é provisionar, via Terraform (OpenTofu), os seguintes recursos na Azure:
+Este projeto foi desenvolvido com objetivo é provisionar, via Terraform (OpenTofu), os seguintes recursos na Azure para uma aplicação de chatbot utilizando OpenAI:
 
 - Resource Group  
 - VNET  
