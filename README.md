@@ -33,7 +33,7 @@ Este projeto está em desenvolvimento. O objetivo é provisionar, via Terraform 
 - App Service Plan  
 - Container Registry  
 
-![Arquitetura](./companyhelperadvisor.jpg)
+![Arquitetura](./simpleinfra.jpg)
 
 ---
 
